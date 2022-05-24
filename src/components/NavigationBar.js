@@ -1,15 +1,15 @@
 import React from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import Search from './Search';
+import { SideNavBtn } from './SideNav';
 
 const NavigationBar = () => {
     return (
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/* Navbar Brand */}
-            <a className="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <a className="navbar-brand ps-3" href="index.html">Start React</a>
             
             {/* Sidebar Toggle */}
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i className="bi-list"></i></button>
+            <SideNavBtn cible='layoutSidenav_nav' />
             
             {/* Navbar Search */}
             <Search />
