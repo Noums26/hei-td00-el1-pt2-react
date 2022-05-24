@@ -1,19 +1,35 @@
 import React from 'react';
 import SideNavLink from './SideNavLink';
 
+const SideNav = ({children}) => {
+    return (
+        <div id="layoutSidenav">
+            {children}
+        </div>
+    );
+}
+
 export const SideNavBtn = ({cible}) => {
     let stat = true;
 
-    const SideBarToggle = ({cible}) => {
-        const sideBar = document.getElementById({cible})
+    const SideBarToggle = (cible) => {
+        const sideBar = document.getElementById(cible)
         stat = !stat
         stat ? sideBar.className = '' : sideBar.className = 'collapse'
     }
 
-    return <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" onClick={SideBarToggle}><i className="bi-list"></i></button>
+    return <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" onClick={e => SideBarToggle(cible)}><i className="bi-list"></i></button>
 }
 
-const SideNav = () => {
+export const SideNavContainer = ({children}) => {
+    return (
+        <div id="layoutSidenav_content">
+            {children}
+        </div>
+    )
+}
+
+export const SideNavNav = () => {
     return (
         <div id="layoutSidenav_nav" className=''>
             <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">

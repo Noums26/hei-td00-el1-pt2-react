@@ -1,5 +1,5 @@
 import React from 'react';
-import SideNav, { SideNavContainer } from '../components/SideNav';
+import SideNav, { SideNavContainer, SideNavNav } from '../components/SideNav';
 import {data} from '../components/data'
 import DataTable, { DataTableBody, DataTableCell, DataTableHeader } from '../components/DataTable';
 import CardMaster from '../components/CardMaster';
@@ -7,11 +7,8 @@ import BreadCrumb from '../components/BreadCrumb';
 
 const Table = () => {
     return (
-        <div>
-            
-        <div id="layoutSidenav">
-        
-        <SideNav />
+        <SideNav>
+            <SideNavNav />
             <SideNavContainer>
                 <main>
                     <div className="container-fluid px-4">
@@ -52,8 +49,7 @@ const Table = () => {
                     </div>
                 </footer>
             </SideNavContainer>
-        </div>
-        </div>
+        </SideNav>
     );
 };
 
