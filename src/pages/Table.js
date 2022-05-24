@@ -1,7 +1,9 @@
 import React from 'react';
-import SideNav from '../components/SideNav';
+import SideNav, { SideNavContainer } from '../components/SideNav';
 import {data} from '../components/data'
 import DataTable, { DataTableBody, DataTableCell, DataTableHeader } from '../components/DataTable';
+import CardMaster from '../components/CardMaster';
+import BreadCrumb from '../components/BreadCrumb';
 
 const Table = () => {
     return (
@@ -10,27 +12,18 @@ const Table = () => {
         <div id="layoutSidenav">
         
         <SideNav />
-            <div id="layoutSidenav_content">
+            <SideNavContainer>
                 <main>
                     <div className="container-fluid px-4">
                         <h1 className="mt-4">Tables</h1>
-                        <ol className="breadcrumb mb-4">
-                            <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li className="breadcrumb-item active">Tables</li>
-                        </ol>
-                        <div className="card mb-4">
-                            <div className="card-body">
+                        <BreadCrumb />
+                        <CardMaster addStyle='mb-4'>
                                 DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
                                 <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
                                 .
-                            </div>
-                        </div>
-                        <div className="card mb-4">
-                            <div className="card-header">
-                                <i className="fas fa-table me-1"></i>
-                                DataTable Example
-                            </div>
-                            <div className="card-body">
+                        </CardMaster>
+                        <CardMaster addStyle='mb-4' title='DataTable Example' icon='bi-table'>
+                            
                                 <DataTable>
                                     
                                     <DataTableHeader title={Object.keys(data[0])} />
@@ -42,8 +35,8 @@ const Table = () => {
                                     </DataTableBody>                                        
                                     
                                 </DataTable>
-                            </div>
-                        </div>
+                            
+                        </CardMaster>
                     </div>
                 </main>
                 <footer className="py-4 bg-light mt-auto">
@@ -58,7 +51,7 @@ const Table = () => {
                         </div>
                     </div>
                 </footer>
-            </div>
+            </SideNavContainer>
         </div>
         </div>
     );
