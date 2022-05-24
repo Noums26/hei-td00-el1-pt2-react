@@ -1,5 +1,7 @@
 import React from 'react';
 import SideNav from '../components/SideNav';
+import {data} from '../components/data'
+import DataTable, { DataTableBody, DataTableCell, DataTableHeader } from '../components/DataTable';
 
 const Table = () => {
     return (
@@ -29,38 +31,17 @@ const Table = () => {
                                 DataTable Example
                             </div>
                             <div className="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <DataTable>
+                                    
+                                    <DataTableHeader title={Object.keys(data[0])} />
+
+                                    <DataTableBody>
+                                        {data.map(item => {
+                                            return <DataTableCell item={item} />
+                                        })}
+                                    </DataTableBody>                                        
+                                    
+                                </DataTable>
                             </div>
                         </div>
                     </div>
