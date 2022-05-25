@@ -5,7 +5,7 @@ import Table from './pages/Table';
 
 function App() {
   return (
-    <div>
+    <div className="sb-nav-fixed">
       <NavigationBar />
       <Table />
     </div>
